@@ -1,0 +1,14 @@
+{
+  "name": "videoUploadOnPasses",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^10.7.0",
+    "ts-loader": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  }
+}
