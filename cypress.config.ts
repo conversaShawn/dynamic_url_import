@@ -3,8 +3,8 @@ import { defineConfig } from "cypress";
 export default defineConfig({
   experimentalModifyObstructiveThirdPartyCode: true,
   env: {
-    AAD_USER_ONE_ORG: 'autotest4@squaredup.cloud',
-    AAD_PASSWORD_ONE_ORG: 'Ee3O2WaLl6Ax'
+    AAD_USER_ONE_ORG: 'YOUR_USERNAME_HERE',
+    AAD_PASSWORD_ONE_ORG: 'YOUR_PASSWORD_HERE'
   },
   e2e: {
     setupNodeEvents(on, config) {
