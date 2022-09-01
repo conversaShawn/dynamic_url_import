@@ -1,14 +1,14 @@
-Cypress._.times(2, k => {
+Cypress._.times(10, k => {
     it.only('Cross origin error when visiting MS hosted login page', () => {
         // Start login process from our app, redirects to b2clogin.com
-        cy.visit('http://master.dev.app.squaredup.com')
+        cy.visit('https://app.squaredup.com')
             .origin('https://b2clogin.com/squaredupauthdev.onmimicrosoft.com', () => {
                 cy.get('#AzureADExchange').click();
             });
 
         const sentArgs = {
-            username: Cypress.env('AAD_USER_ONE_ORG'),
-            password: Cypress.env('AAD_PASSWORD_ONE_ORG'),
+            username: 'autotest4@squaredup.cloud',
+            password: 'Ee3O2WaLl6Ax',
             clickAadTile: false,
             clickDontRemainSignedIn: true
         };
