@@ -8,6 +8,9 @@
     "ts-loader": "latest",
     "typescript": "latest"
   },
+  "scripts": {
+    "cy:open": "cypress open"
+  },
   "devDependencies": {
     "typescript": "^4.8.2"
   }

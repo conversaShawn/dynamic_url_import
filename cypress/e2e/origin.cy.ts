@@ -1,12 +1,21 @@
-Cypress._.times(1, (k) => {
+Cypress._.times(10, (k) => {
   it.only("Cross origin error when visiting MS hosted login page", () => {
     // Start login process from our app, redirects to b2clogin.com
-    cy.visit("https://app.squaredup.com").origin(
-      "https://squaredupauth.b2clogin.com/squaredupauthdev.onmimicrosoft.com",
-      () => {
-        cy.get("#AzureADExchange").click();
-      }
-    );
+    // cy.visit("https://app.squaredup.com").origin(
+    //   "https://squaredupauth.b2clogin.com/squaredupauthdev.onmimicrosoft.com",
+    //   () => {
+    //     cy.get("#AzureADExchange").click();
+    //   }
+    // );
+    cy.visit('https://app.squaredup.com')
+    .window()
+    .its('SQUPRELEASEVARS.Auth.Tenant')
+    .then((authHostname) => {
+        cy.origin(`https://${authHostname}.b2clogin.com`, () => {
+            cy.get('#AzureADExchange').click();
+        });
+    });
+
 
     const sentArgs = {
       username: Cypress.env("AAD_USER_ONE_ORG"),
