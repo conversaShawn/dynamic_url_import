@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "cypress": "10.11",
+    "cypress": "^11.1.0",
     "ts-loader": "latest",
     "typescript": "latest"
   },
